@@ -1,4 +1,4 @@
-// cypress/e2e/register_form.cy.js
+
 
 describe('Formulario de Registro', () => {
   beforeEach(() => {
