@@ -1,18 +1,15 @@
-// cypress/support/commands.js
-// Custom Cypress commands for registration form
-
-Cypress.Commands.add('fillPersonalInfo', (firstName, lastName, phone, dni) => {
-  cy.get('[data-cy="input-nombres"]').clear().type(firstName)
-  cy.get('[data-cy="input-apellido"]').clear().type(lastName)
-  cy.get('[data-cy="input-telefono"]').clear().type(phone)
+Cypress.Commands.add('fillPersonalInfo', (nombres, apellidos, telefono, dni) => {
+  cy.get('[data-cy="input-nombres"]').clear().type(nombres)
+  cy.get('[data-cy="input-apellido"]').clear().type(apellidos)
+  cy.get('[data-cy="input-telefono"]').clear().type(telefono)
   cy.get('[data-cy="input-dni"]').clear().type(dni)
 })
 
-Cypress.Commands.add('selectLocation', (province, city) => {
-  cy.get('[data-cy="select-provincia"]').clear().type(province)
-  cy.get('ul > li > span').contains(province).click()
-  cy.get('[data-cy="select-localidad"]').clear().type(city)
-  cy.get('ul > li > span').contains(city).click()
+Cypress.Commands.add('selectLocation', (provincia, localidad) => {
+  cy.get('[data-cy="select-provincia"]').clear().type(provincia)
+  cy.get('ul > li > span').contains(provincia).click()
+  cy.get('[data-cy="select-localidad"]').clear().type(localidad)
+  cy.get('ul > li > span').contains(localidad).click()
 })
 
 Cypress.Commands.add('fillBirthDate', (day, month, year) => {
